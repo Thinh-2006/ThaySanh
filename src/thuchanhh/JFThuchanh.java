@@ -171,11 +171,65 @@ public class JFThuchanh extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+     try {
+        // Nhập số a và b
+        String sA = javax.swing.JOptionPane.showInputDialog(this, "Nhập số thứ nhất (a):");
+        String sB = javax.swing.JOptionPane.showInputDialog(this, "Nhập số thứ hai (b):");
+        
+        double a = Double.parseDouble(sA);
+        double b = Double.parseDouble(sB);
+        double ketQua = 0;
+        String phepTinh = "";
+
+        if (jRadioButton1.isSelected()) {
+            ketQua = a + b;
+            phepTinh = "Cộng";
+        } else if (jRadioButton3.isSelected()) {
+            ketQua = a - b;
+            phepTinh = "Trừ";
+        } else if (jRadioButton2.isSelected()) {
+            ketQua = a * b;
+            phepTinh = "Nhân";
+        } else if (jRadioButton4.isSelected()) {
+            if (b == 0) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Không thể chia cho 0!");
+                return;
+            }
+            ketQua = a / b;
+            phepTinh = "Chia";
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "Vui lòng chọn một phép tính!");
+            return;
+        }
+
+        javax.swing.JOptionPane.showMessageDialog(this, "Kết quả phép " + phepTinh + " là: " + ketQua);
+    } catch (Exception e) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Dữ liệu nhập không hợp lệ!");
+    }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+      try {
+        // Nhập hệ số cho phương trình ax + b = 0
+        String sA = javax.swing.JOptionPane.showInputDialog(this, "Giải PT ax + b = 0\nNhập hệ số a:");
+        String sB = javax.swing.JOptionPane.showInputDialog(this, "Nhập hệ số b:");
+        
+        double a = Double.parseDouble(sA);
+        double b = Double.parseDouble(sB);
+
+        if (a == 0) {
+            if (b == 0) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Phương trình vô số nghiệm.");
+            } else {
+                javax.swing.JOptionPane.showMessageDialog(this, "Phương trình vô nghiệm.");
+            }
+        } else {
+            double x = -b / a;
+            javax.swing.JOptionPane.showMessageDialog(this, "Nghiệm của phương trình là x = " + x);
+        }
+    } catch (Exception e) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Vui lòng nhập số hợp lệ!");
+    }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
