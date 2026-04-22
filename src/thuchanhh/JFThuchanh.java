@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package thuchanhh;
-
+import javax.swing.JOptionPane;
 /**
  *
  * @author thinh
@@ -231,11 +231,64 @@ javax.swing.JTextField txtKQ = new javax.swing.JTextField();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+       try {
+        String sa = JOptionPane.showInputDialog(this, "Nhập a:");
+        String sb = JOptionPane.showInputDialog(this, "Nhập b:");
+        String sc = JOptionPane.showInputDialog(this, "Nhập c:");
+
+        if (sa == null || sb == null || sc == null) return; // bấm cancel
+
+        int a = Integer.parseInt(sa);
+        int b = Integer.parseInt(sb);
+        int c = Integer.parseInt(sc);
+
+        int max = a;
+        if (b > max) max = b;
+        if (c > max) max = c;
+
+        JOptionPane.showMessageDialog(this, "Số lớn nhất là: " + max);
+
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Phải nhập số!");
+    }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        try {
+        int thang = Integer.parseInt(JOptionPane.showInputDialog("Nhập tháng:"));
+        int nam = Integer.parseInt(JOptionPane.showInputDialog("Nhập năm:"));
+
+        int soNgay;
+
+        switch (thang) {
+            case 1: case 3: case 5: case 7:
+            case 8: case 10: case 12:
+                soNgay = 31;
+                break;
+
+            case 4: case 6: case 9: case 11:
+                soNgay = 30;
+                break;
+
+            case 2:
+                if ((nam % 4 == 0 && nam % 100 != 0) || (nam % 400 == 0)) {
+                    soNgay = 29;
+                } else {
+                    soNgay = 28;
+                }
+                break;
+
+            default:
+                JOptionPane.showMessageDialog(this, "Tháng không hợp lệ!");
+                return;
+        }
+
+        JOptionPane.showMessageDialog(this,
+                "Tháng " + thang + " năm " + nam + " có " + soNgay + " ngày");
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Nhập sai dữ liệu!");
+    }
     }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
