@@ -17,6 +17,11 @@ public class JFThuchanh extends javax.swing.JFrame {
      */
     public JFThuchanh() {
         initComponents();
+        javax.swing.ButtonGroup group = new javax.swing.ButtonGroup();
+        group.add(jRadioButton1);
+        group.add(jRadioButton2);
+        group.add(jRadioButton3);
+        group.add(jRadioButton4);
     }
 
     /**
