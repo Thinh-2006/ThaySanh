@@ -17,13 +17,6 @@ public class JFThuchanh extends javax.swing.JFrame {
      */
     public JFThuchanh() {
         initComponents();
-<<<<<<< HEAD
-        javax.swing.ButtonGroup group = new javax.swing.ButtonGroup();
-        group.add(jRadioButton1);
-        group.add(jRadioButton2);
-        group.add(jRadioButton3);
-        group.add(jRadioButton4);
-=======
         javax.swing.JLabel lbl1 = new javax.swing.JLabel("Số 1 / Dài / Mét:");
 javax.swing.JLabel lbl2 = new javax.swing.JLabel("Số 2 / Rộng:");
 javax.swing.JLabel lblKQ = new javax.swing.JLabel("Kết quả:");
@@ -54,7 +47,6 @@ add(lbl2);
 add(txt2);
 add(lblKQ);
 add(txtKQ);
->>>>>>> origin/AnhToan
     }
 
     /**
