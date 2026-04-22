@@ -17,6 +17,36 @@ public class JFThuchanh extends javax.swing.JFrame {
      */
     public JFThuchanh() {
         initComponents();
+        javax.swing.JLabel lbl1 = new javax.swing.JLabel("Số 1 / Dài / Mét:");
+javax.swing.JLabel lbl2 = new javax.swing.JLabel("Số 2 / Rộng:");
+javax.swing.JLabel lblKQ = new javax.swing.JLabel("Kết quả:");
+
+// set size cho dễ nhìn
+txt1.setColumns(10);
+txt2.setColumns(10);
+txtKQ.setColumns(15);
+txtKQ.setEditable(false);
+
+// thêm vào layout (cách nhanh: dùng setBounds)
+lbl1.setBounds(350, 50, 150, 25);
+txt1.setBounds(500, 50, 100, 25);
+
+lbl2.setBounds(350, 90, 150, 25);
+txt2.setBounds(500, 90, 100, 25);
+
+lblKQ.setBounds(350, 130, 100, 25);
+txtKQ.setBounds(500, 130, 150, 25);
+
+// set layout null để dùng setBounds
+getContentPane().setLayout(null);
+
+// add vào frame
+add(lbl1);
+add(txt1);
+add(lbl2);
+add(txt2);
+add(lblKQ);
+add(txtKQ);
     }
 
     /**
@@ -157,17 +187,39 @@ public class JFThuchanh extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    javax.swing.JTextField txt1 = new javax.swing.JTextField();
+javax.swing.JTextField txt2 = new javax.swing.JTextField();
+javax.swing.JTextField txtKQ = new javax.swing.JTextField();
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+        try {
+        double dai = Double.parseDouble(txt1.getText());
+        double rong = Double.parseDouble(txt2.getText());
+
+        double dienTich = dai * rong;
+
+        txtKQ.setText("Diện tích: " + dienTich);
+    } catch (Exception e) {
+        txtKQ.setText("Lỗi nhập!");
+    }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        try {
+        double met = Double.parseDouble(txt1.getText());
+
+        double km = met / 1000;
+
+        txtKQ.setText("Km: " + km);
+    } catch (Exception e) {
+        txtKQ.setText("Lỗi nhập!");
+    }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
